@@ -28,11 +28,11 @@ public class SleepyShutdownTest {
     @Test
     public void testShutdown() throws IOException {
         sleepyShutdown.shutdown(0,0,0);
-        verify(cliServiceMock).execute(argumentCaptor.capture());
+        verify(cliServiceMock, times(1)).execute(argumentCaptor.capture());
         assertEquals("shutdown /s /t 0", argumentCaptor.getValue());
 
         sleepyShutdown.shutdown(1,1,1);
-        verify(cliServiceMock,times(5)).execute(argumentCaptor.capture());
+        verify(cliServiceMock, times(2)).execute(argumentCaptor.capture());
         assertEquals("shutdown /s /t 3661", argumentCaptor.getValue());
     }
 
