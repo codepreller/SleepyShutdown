@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SleepyShutdownController">
+   <children>
+      <SplitPane dividerPositions="0.6545454545454545" layoutX="184.0" layoutY="14.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="398.0">
+               <children>
+                  <GridPane prefHeight="54.0" prefWidth="370.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="199.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="199.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="199.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints fillHeight="false" maxHeight="77.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                      <RowConstraints fillHeight="false" maxHeight="145.0" minHeight="10.0" prefHeight="145.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Spinner fx:id="hoursSpinner" GridPane.rowIndex="1">
+                            <valueFactory>
+                             <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                                 <min>0</min>
+                                 <max>23</max>
+                                 <wrapAround>true</wrapAround>
+                             </javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                            </valueFactory>
+                        </Spinner>
+                        <Spinner fx:id="minutesSpinner" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <valueFactory>
+                                <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                                    <min>0</min>
+                                    <max>59</max>
+                                    <wrapAround>true</wrapAround>
+                                </javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                            </valueFactory>
+                        </Spinner>
+                        <Spinner fx:id="secondsSpinner" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <valueFactory>
+                                <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                                    <min>0</min>
+                                    <max>59</max>
+                                    <wrapAround>true</wrapAround>
+                                </javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                            </valueFactory>
+                        </Spinner>
+                        <Label alignment="CENTER" text="Stunden" />
+                        <Label text="Minuten" GridPane.columnIndex="1" />
+                        <Label text="Sekunden" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button fx:id="shutdownButton" layoutX="129.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#shutdownButtonClicked" text="Shutdown" />
+                  <Button layoutX="199.0" layoutY="3.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#stopShutdownButtonClicked" prefWidth="75.0" text="Stop" />
+               </children>
+            </AnchorPane>
+        </items>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </SplitPane>
+   </children>
+</AnchorPane>
