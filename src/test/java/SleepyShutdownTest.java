@@ -17,29 +17,29 @@ import static org.junit.Assert.*;
 public class SleepyShutdownTest {
     ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
     SleepyShutdown sleepyShutdown;
-    CLIServiceInterface cliServiceInterfaceMock;
+    CLIServiceInterface cliServiceMock;
 
     @Before
     public void setUp() {
-        cliServiceInterfaceMock = mock(CLIService.class);
-        sleepyShutdown = new SleepyShutdown(cliServiceInterfaceMock);
+        cliServiceMock = mock(CLIService.class);
+        sleepyShutdown = new SleepyShutdown(cliServiceMock);
     }
 
     @Test
     public void testShutdown() throws IOException {
         sleepyShutdown.shutdown(0,0,0);
-        verify(cliServiceInterfaceMock).execute(argumentCaptor.capture());
+        verify(cliServiceMock).execute(argumentCaptor.capture());
         assertEquals("shutdown /s /t 0", argumentCaptor.getValue());
 
         sleepyShutdown.shutdown(1,1,1);
-        verify(cliServiceInterfaceMock,times(5)).execute(argumentCaptor.capture());
+        verify(cliServiceMock,times(5)).execute(argumentCaptor.capture());
         assertEquals("shutdown /s /t 3661", argumentCaptor.getValue());
     }
 
     @Test
     public void testStopShutdown() throws IOException {
         sleepyShutdown.stopShutdown();
-        verify(cliServiceInterfaceMock).execute(argumentCaptor.capture());
+        verify(cliServiceMock).execute(argumentCaptor.capture());
         assertEquals("shutdown /a", argumentCaptor.getValue());
     }
 }
