@@ -1,9 +1,8 @@
-/**
+package logic; /**
  * User: preller
  * Date: 25.12.2015
  */
 
-import logic.SleepyShutdown;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;

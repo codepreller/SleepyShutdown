@@ -7,6 +7,7 @@ package app;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -19,11 +20,12 @@ public class SleepyShutdownApp extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(SleepyShutdownApp.class.getResource("/SleepyShutdownGUI.fxml"));
+            loader.setLocation(getClass().getResource("/SleepyShutdownGUI.fxml"));
             sleepyShutdownGUI = loader.load();
 
             Scene scene = new Scene(sleepyShutdownGUI);
             primaryStage.setTitle("SleepyShutdown");
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/giraparksheep.png")));
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {

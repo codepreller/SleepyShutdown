@@ -7,3 +7,8 @@ features:
 - simple gui to select the shutdown time in the format: hours,minutes,seconds
 - start shutdownsequence
 - stop shutdownsequence
+
+icon:
+gira park, creative commons
+https://thenounproject.com/term/sheep/90442/
+https://thenounproject.com/gila.bag/
