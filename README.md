@@ -8,7 +8,6 @@ features:
 - start shutdownsequence
 - stop shutdownsequence
 
-icon:
-gira park, creative commons
-https://thenounproject.com/term/sheep/90442/
-https://thenounproject.com/gila.bag/
+sheep icon by gira park (creative commons):
+- https://thenounproject.com/term/sheep/90442/
+- https://thenounproject.com/gila.bag/
