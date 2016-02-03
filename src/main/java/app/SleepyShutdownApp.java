@@ -19,6 +19,7 @@ public class SleepyShutdownApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+            System.out.println("start()");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/SleepyShutdownGUI.fxml"));
             sleepyShutdownGUI = loader.load();
@@ -28,12 +29,16 @@ public class SleepyShutdownApp extends Application {
             primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/giraparksheep.png")));
             primaryStage.setScene(scene);
             primaryStage.show();
+            System.out.println("start() end");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Exception wurde geworfen und nicht vernünftig behandelt");
         }
     }
 
     public static void main(String[] args) {
+        System.out.println("Starting SleepyShutdown");
         launch(args);
+        System.out.println("SleepyShutdown gestartet");
     }
 }
